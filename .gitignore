@@ -1,0 +1,12 @@
+# Created by .ignore support plugin (hsz.mobi)
+### sdevil507's ignore template
+# idea
+.idea
+*.iml
+# java
+out
+gen
+logs
+target
+# macOS
+.DS_Store
