@@ -1,6 +1,5 @@
 package me.sdevil507.jpa;
 
-import org.apache.commons.lang3.EnumUtils;
 import org.springframework.data.domain.Sort;
 import org.springframework.util.StringUtils;
 
@@ -31,9 +30,7 @@ public class SortParamsDTO {
             return null;
         }
 
-        assert EnumUtils.isValidEnum(Sort.Direction.class, sortDirection.toUpperCase());
-
-        return new Sort(EnumUtils.getEnum(Sort.Direction.class, sortDirection.toUpperCase()), sortField);
+        return Sort.by(Sort.Direction.fromString(sortDirection), sortField);
     }
 
     public String getSortField() {
