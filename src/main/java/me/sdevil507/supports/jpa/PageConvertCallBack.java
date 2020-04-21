@@ -1,4 +1,4 @@
-package me.sdevil507.jpa;
+package me.sdevil507.supports.jpa;
 
 import java.util.List;
 

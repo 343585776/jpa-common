@@ -1,5 +1,6 @@
-package me.sdevil507.jpa;
+package me.sdevil507.supports.jpa;
 
+import lombok.Data;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -9,6 +10,7 @@ import org.springframework.data.domain.Sort;
  *
  * @author sdevil507
  */
+@Data
 public class PageParamsDTO {
 
     /**
@@ -42,29 +44,5 @@ public class PageParamsDTO {
         assert currentPage > 0;
         assert pageSize > 0;
         return PageRequest.of(currentPage - 1, pageSize, sort);
-    }
-
-    public Integer getCurrentPage() {
-        return currentPage;
-    }
-
-    public void setCurrentPage(Integer currentPage) {
-        this.currentPage = currentPage;
-    }
-
-    public Integer getPageSize() {
-        return pageSize;
-    }
-
-    public void setPageSize(Integer pageSize) {
-        this.pageSize = pageSize;
-    }
-
-    @Override
-    public String toString() {
-        return "PageParamsDTO{" +
-                "currentPage=" + currentPage +
-                ", pageSize=" + pageSize +
-                '}';
     }
 }

@@ -1,5 +1,6 @@
-package me.sdevil507.jpa;
+package me.sdevil507.supports.jpa;
 
+import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.Column;
@@ -9,11 +10,12 @@ import javax.persistence.MappedSuperclass;
 import java.io.Serializable;
 
 /**
- * JPA设置主键ID为UUID抽象父类
+ * JPA设置主键ID为UUID基类
  *
  * @author sdevil507
  */
 @MappedSuperclass
+@Data
 public class BaseJpaUUIDEntity implements Serializable {
 
     /**
@@ -24,12 +26,4 @@ public class BaseJpaUUIDEntity implements Serializable {
     @GeneratedValue(generator = "sys-uuid")
     @Column(name = "id")
     protected String id;
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 }

@@ -1,5 +1,6 @@
-package me.sdevil507.jpa;
+package me.sdevil507.supports.jpa;
 
+import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
@@ -17,6 +18,7 @@ import java.util.Date;
  * @author sdevil507
  */
 @MappedSuperclass
+@Data
 @EntityListeners(AuditingEntityListener.class)
 public abstract class BaseJpaUUIDAndAuditEntity implements Serializable {
 
@@ -56,44 +58,4 @@ public abstract class BaseJpaUUIDAndAuditEntity implements Serializable {
     @LastModifiedDate
     @Column(name = "last_modified_date")
     protected Date lastModifiedDate;
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getCreatedBy() {
-        return createdBy;
-    }
-
-    public void setCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
-    }
-
-    public Date getCreatedDate() {
-        return createdDate;
-    }
-
-    public void setCreatedDate(Date createdDate) {
-        this.createdDate = createdDate;
-    }
-
-    public String getLastModifiedBy() {
-        return lastModifiedBy;
-    }
-
-    public void setLastModifiedBy(String lastModifiedBy) {
-        this.lastModifiedBy = lastModifiedBy;
-    }
-
-    public Date getLastModifiedDate() {
-        return lastModifiedDate;
-    }
-
-    public void setLastModifiedDate(Date lastModifiedDate) {
-        this.lastModifiedDate = lastModifiedDate;
-    }
 }
